@@ -29,28 +29,6 @@ test('subtractAsync subtracts numbers asynchronously', async () => {
   expect(result).toBe(expected)
 })
 
-async function test(title, callback) {
-  try {
-    await callback()
-    console.log(`✓ ${title}`)
-  } catch (error) {
-    console.error(`⨯ ${title}`)
-    console.error(error)
-  }
-}
-
-function expect(actual) {
-  return {
-    toBe(expected) {
-      if (actual !== expected) {
-        throw new Error(`${actual} is not equal to ${expected}`)
-      }
-    },
-    toEqual(expected) {},
-    toBeGreaterThan(expected) {}
-  }
-}
-
 /**
  * Answer: Checkout the master branch for the answer.
  */
