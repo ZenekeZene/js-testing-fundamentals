@@ -13,7 +13,17 @@
 
 const {sum, subtract} = require('../math')
 
-let result, expected
+let result = sum(3, 7)
+let expected = 10
+if (result !== expected) {
+  throw new Error(`${result} is not equal to ${expected}`)
+}
+
+result = subtract(10, 7)
+expected = 3
+if (result !== expected) {
+  throw new Error(`${result} is not equal to ${expected}`)
+}
 
 /**
  * Hint: there's no magic, just the most straightforward conditional statement.
