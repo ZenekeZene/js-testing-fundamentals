@@ -40,6 +40,8 @@ function expect(actual) {
   }
 }
 
+module.exports = {expect}
+
 /**
  * Answer: Checkout the master branch for the answer.
  */

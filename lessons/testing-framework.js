@@ -17,6 +17,7 @@
  */
 
 const {sum, subtract} = require('../math')
+const {expect} = require('./assertion-library')
 
 test('sum adds numbers', () => {
   const result = sum(3, 7)
@@ -29,6 +30,16 @@ test('subtract subtracts numbers', () => {
   const expected = 4
   expect(result).toBe(expected)
 })
+
+function test(title, callback) {
+  try {
+    callback()
+    console.log(`✓ ${title}`)
+  } catch (error) {
+    console.error(`⨯ ${title}`)
+    console.error(error)
+  }
+}
 
 /**
  * Answer: Checkout the master branch for the answer.
