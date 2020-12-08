@@ -17,7 +17,6 @@
  */
 
 const {sum, subtract} = require('../math')
-const {expect} = require('./assertion-library')
 
 test('sum adds numbers', () => {
   const result = sum(3, 7)
@@ -38,6 +37,18 @@ function test(title, callback) {
   } catch (error) {
     console.error(`⨯ ${title}`)
     console.error(error)
+  }
+}
+
+function expect(actual) {
+  return {
+    toBe(expected) {
+      if (actual !== expected) {
+        throw new Error(`${actual} is not equal to ${expected}`)
+      }
+    },
+    toEqual(expected) {},
+    toBeGreaterThan(expected) {}
   }
 }
 
